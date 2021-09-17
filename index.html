@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://use.fontawesome.com/13dd2f930c.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+  <div class="header__logo">
+    <img
+      class="logo__icon"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnIHRyYW5zZm9ybT0ibWF0cml4KC0xLDIuNDY1MTkwMzI4ODE1NjYyZS0zMiwyLjQ2NTE5MDMyODgxNTY2MmUtMzIsMSw1MTEuOTk4OTkyOTE5OTIxOSwtNS42ODQzNDE4ODYwODA4MDJlLTE0KSI+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDU4LjY2NywxOTJDNDIyLjQ3OSwxOTIsMzg0LDIyMS45MTcsMzg0LDI3Ny4zMzNjMCwyOC4xMjUsMTAuNzUsNDguMjA4LDIxLjE0Niw2Ny42NDYgICAgYzExLjA2MywyMC42ODgsMjEuNTIxLDQwLjIyOSwyMS41MjEsNzEuMDIxYzAsNTAuMjUtMjQuNDE3LDc0LjY2Ny03NC42NjcsNzQuNjY3aC0xMS45MSAgICBjMTMuODg5LTEzLjU2OCwyMi41NzctMzIuNDMyLDIyLjU3Ny01My4zMzN2LTQyLjY2N2MwLTU0LjgxMy0zMS42ODgtODIuNjQ2LTU0LjgxMy0xMDIuOTU4ICAgIGMtNC40NzktMy45MzgtOC42ODgtNy42MjUtMTIuMzEzLTExLjI1Yy01LjMxMy01LjMxMy0xMi40MzgtMTEuNjg4LTIwLjIwOC0xOC42MjVDMjU2LjEyNSwyNDQuNzA4LDIyNCwyMTYuMDQyLDIyNCwyMDIuNjY3Vjk2ICAgIGMwLTMwLjc1LTIzLjE0Ni00NS4zOTYtMzMuOTM4LTUwLjU0MkMxODUuNTgzLDMyLjM5NiwxNzEuMTg3LDAsMTM4LjY2NywwQzEzMi43NzEsMCwxMjgsNC43NzEsMTI4LDEwLjY2NyAgICBjMCwxNi41MjEtNy4zMzMsMzItMTAuNjY3LDMyYy0xNS4zOTYsMC0yNC42MDQsMTMuODEzLTMyLDI0LjkzOGMtMi43MjksNC4wODMtNS4zMTMsNy45NTgtNy41NDIsMTAuMTg4ICAgIGMtMi42MjUsMi42MjUtNi40NzksNS4yNzEtMTAuNDU4LDguMDgzYy0xMS41NjMsOC4xODgtMjQuNjY3LDE3LjQ3OS0yNC42NjcsMzEuNDU4YzAsMzguODU0LDQ1Ljc5Miw1My4zMzMsNzQuNjY3LDUzLjMzMyAgICBjNi4zOTYsMCw4LjM1NCwwLjQ3OSw4LjYwNCwwLjQ3OWMwLDAsMCwwLDAuMDIxLDBjMi4wNjMsMywyLjA2MywxOC42MjUsMi4wNDIsMzYuNzA4djUuNDc5YzAsNS4yMDgtMS44NzUsOC41NjMtNS43OTIsMTUuMDgzICAgIGMtNi41NjMsMTAuOTM4LTE1LjU0MiwyNS44OTYtMTUuNTQyLDU5LjU4M2MwLDIyLjQ3OSwxNi4zNTQsNTYuNjY3LDIxLjMzMyw2Ni41NjNWNDQ4aC0xMC42NjdjLTE3LjY0NiwwLTMyLDE0LjM1NC0zMiwzMnYyMS4zMzMgICAgQzg1LjMzMyw1MDcuMjI5LDkwLjEwNCw1MTIsOTYsNTEyaDI1NmM2MS45MTcsMCw5Ni0zNC4wODMsOTYtOTZjMC0zNi4xMjUtMTIuNzcxLTYwLjAyMS0yNC4wNDItODEuMDgzICAgIGMtMTAtMTguNjg4LTE4LjYyNS0zNC44MTMtMTguNjI1LTU3LjU4M2MwLTQ2Ljk1OCwzMS44OTYtNjQsNTMuMzMzLTY0YzUuODk2LDAsMTAuNjY3LTQuNzcxLDEwLjY2Ny0xMC42NjcgICAgQzQ2OS4zMzMsMTk2Ljc3MSw0NjQuNTYyLDE5Miw0NTguNjY3LDE5MnoiIGZpbGw9IiMyNWIyZDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+"
+    />
+    <span class="logo__text">Bulka TV</span>
+  </div>
+  <div class="header__search">
+    <form search__form>
+      <input class="search__input" type="text" placeholder="Search..." />
+      <button class="search__btn" type="submit"></button>
+    </form>
+    <img
+      class="search__icon"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ3NS4wODUgNDc1LjA4NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNMjM3LjU0MSwzMjguODk3YzI1LjEyOCwwLDQ2LjYzMi04Ljk0Niw2NC41MjMtMjYuODNjMTcuODg4LTE3Ljg4NCwyNi44MzMtMzkuMzk5LDI2LjgzMy02NC41MjVWOTEuMzY1ICAgIGMwLTI1LjEyNi04LjkzOC00Ni42MzItMjYuODMzLTY0LjUyNUMyODQuMTczLDguOTUxLDI2Mi42NjksMCwyMzcuNTQxLDBjLTI1LjEyNSwwLTQ2LjYzMiw4Ljk1MS02NC41MjQsMjYuODQgICAgYy0xNy44OTMsMTcuODktMjYuODM4LDM5LjM5OS0yNi44MzgsNjQuNTI1djE0Ni4xNzdjMCwyNS4xMjUsOC45NDksNDYuNjQxLDI2LjgzOCw2NC41MjUgICAgQzE5MC45MDYsMzE5Ljk1MSwyMTIuNDE2LDMyOC44OTcsMjM3LjU0MSwzMjguODk3eiIgZmlsbD0iI2MxYzFjMSIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik0zOTYuNTYzLDE4OC4xNWMtMy42MDYtMy42MTctNy44OTgtNS40MjYtMTIuODQ3LTUuNDI2Yy00Ljk0NCwwLTkuMjI2LDEuODA5LTEyLjg0Nyw1LjQyNiAgICBjLTMuNjEzLDMuNjE2LTUuNDIxLDcuODk4LTUuNDIxLDEyLjg0NXYzNi41NDdjMCwzNS4yMTQtMTIuNTE4LDY1LjMzMy0zNy41NDgsOTAuMzYyYy0yNS4wMjIsMjUuMDMtNTUuMTQ1LDM3LjU0NS05MC4zNiwzNy41NDUgICAgYy0zNS4yMTQsMC02NS4zMzQtMTIuNTE1LTkwLjM2NS0zNy41NDVjLTI1LjAyOC0yNS4wMjItMzcuNTQxLTU1LjE0Ny0zNy41NDEtOTAuMzYydi0zNi41NDdjMC00Ljk0Ny0xLjgwOS05LjIyOS01LjQyNC0xMi44NDUgICAgYy0zLjYxNy0zLjYxNy03Ljg5NS01LjQyNi0xMi44NDctNS40MjZjLTQuOTUyLDAtOS4yMzUsMS44MDktMTIuODUsNS40MjZjLTMuNjE4LDMuNjE2LTUuNDI2LDcuODk4LTUuNDI2LDEyLjg0NXYzNi41NDcgICAgYzAsNDIuMDY1LDE0LjA0LDc4LjY1OSw0Mi4xMTIsMTA5Ljc3NmMyOC4wNzMsMzEuMTE4LDYyLjc2Miw0OC45NjEsMTA0LjA2OCw1My41MjZ2MzcuNjkxaC03My4wODkgICAgYy00Ljk0OSwwLTkuMjMxLDEuODExLTEyLjg0Nyw1LjQyOGMtMy42MTcsMy42MTQtNS40MjYsNy44OTgtNS40MjYsMTIuODQ3YzAsNC45NDEsMS44MDksOS4yMzMsNS40MjYsMTIuODQ3ICAgIGMzLjYxNiwzLjYxNCw3Ljg5OCw1LjQyOCwxMi44NDcsNS40MjhoMTgyLjcxOWM0Ljk0OCwwLDkuMjM2LTEuODEzLDEyLjg0Ny01LjQyOGMzLjYyMS0zLjYxMyw1LjQzMS03LjkwNSw1LjQzMS0xMi44NDcgICAgYzAtNC45NDgtMS44MS05LjIzMi01LjQzMS0xMi44NDdjLTMuNjEtMy42MTctNy44OTgtNS40MjgtMTIuODQ3LTUuNDI4aC03My4wOHYtMzcuNjkxICAgIGM0MS4yOTktNC41NjUsNzUuOTg1LTIyLjQwOCwxMDQuMDYxLTUzLjUyNmMyOC4wNzYtMzEuMTE3LDQyLjEyLTY3LjcxMSw0Mi4xMi0xMDkuNzc2di0zNi41NDcgICAgQzQwMS45OTgsMTk2LjA0OSw0MDAuMTg1LDE5MS43NywzOTYuNTYzLDE4OC4xNXoiIGZpbGw9IiNjMWMxYzEiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+"
+    />
+  </div>
+  <div class="header__user">
+    <img
+      class="user__icon"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ2Ny44MTIsNDMxLjg1MWwtMzYuNjI5LTYxLjA1NmMtMTYuOTE3LTI4LjE4MS0yNS44NTYtNjAuNDU5LTI1Ljg1Ni05My4zMTJWMjI0YzAtNjcuNTItNDUuMDU2LTEyNC42MjktMTA2LjY2Ny0xNDMuMDQgICAgVjQyLjY2N0MyOTguNjYsMTkuMTM2LDI3OS41MjQsMCwyNTUuOTkzLDBzLTQyLjY2NywxOS4xMzYtNDIuNjY3LDQyLjY2N1Y4MC45NkMxNTEuNzE2LDk5LjM3MSwxMDYuNjYsMTU2LjQ4LDEwNi42NiwyMjR2NTMuNDgzICAgIGMwLDMyLjg1My04LjkzOSw2NS4xMDktMjUuODM1LDkzLjI5MWwtMzYuNjI5LDYxLjA1NmMtMS45ODQsMy4zMDctMi4wMjcsNy40MDMtMC4xMjgsMTAuNzUyYzEuODk5LDMuMzQ5LDUuNDE5LDUuNDE5LDkuMjU5LDUuNDE5ICAgIEg0NTguNjZjMy44NCwwLDcuMzgxLTIuMDY5LDkuMjgtNS4zOTdDNDY5LjgzOSw0MzkuMjc1LDQ2OS43NzUsNDM1LjEzNiw0NjcuODEyLDQzMS44NTF6IiBmaWxsPSIjYzFjMWMxIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0xODguODE1LDQ2OS4zMzNDMjAwLjg0Nyw0OTQuNDY0LDIyNi4zMTksNTEyLDI1NS45OTMsNTEyczU1LjE0Ny0xNy41MzYsNjcuMTc5LTQyLjY2N0gxODguODE1eiIgZmlsbD0iI2MxYzFjMSIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4="
+    />
+    <div class="user__avatar"></div>
+    <div class="user__menu">
+      <ul>
+        <li class="menu__item">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi4wMDAxMSA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTM0Mi4zODI4MTIgMjM5LjM1MTU2MmMtMjMuMDM5MDYyLTM1Ljk0MTQwNi02Mi4yNzczNDMtNTcuNDAyMzQzLTEwNC45NjQ4NDMtNTcuNDAyMzQzcy04MS45MjU3ODEgMjEuNDYwOTM3LTEwNC45NjA5MzggNTcuNDAyMzQzbC01NS41MTU2MjUgODYuNjA1NDY5Yy05LjIxMDkzNyAxNC4zNjcxODgtMTMuNDYwOTM3IDMwLjk2ODc1LTEyLjI5Mjk2OCA0Ny45OTYwOTQgMS4xNjc5NjggMTcuMDMxMjUgNy42NDg0MzcgMzIuODkwNjI1IDE4LjczODI4MSA0NS44NzUgMTEuMDk3NjU2IDEyLjk3MjY1NiAyNS43NjE3MTkgMjEuODM5ODQ0IDQyLjQwNjI1IDI1LjY0NDUzMSAxNi42NDQ1MzEgMy44MDQ2ODggMzMuNzA3MDMxIDIuMTc5Njg4IDQ5LjMzOTg0My00LjY5MTQwNmwxLjA0Njg3Ni0uNDY0ODQ0YzM5LjMzNTkzNy0xNi45NDUzMTIgODQuMjg1MTU2LTE2Ljc4OTA2MiAxMjMuNTE5NTMxLjQ2NDg0NCAxMC4xMjEwOTMgNC40NDkyMTkgMjAuODQzNzUgNi42OTkyMTkgMzEuNjY0MDYyIDYuNjk5MjE5IDUuODgyODEzIDAgMTEuODAwNzgxLS42Njc5NjkgMTcuNjY0MDYzLTIuMDAzOTA3IDE2LjY0NDUzMS0zLjgwMDc4MSAzMS4zMDg1OTQtMTIuNjY3OTY4IDQyLjQxMDE1Ni0yNS42NDQ1MzEgMTEuMDkzNzUtMTIuOTcyNjU2IDE3LjU3ODEyNS0yOC44MzU5MzcgMTguNzUtNDUuODcxMDkzIDEuMTcxODc1LTE3LjAzNTE1Ny0zLjA3ODEyNS0zMy42MzI4MTMtMTIuMjg5MDYyLTQ4LjAwNzgxM3ptMCAwIiBmaWxsPSIjMDAwMDAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtOTEuODk0NTMxIDIzOS4yMzgyODFjMTYuNTE1NjI1LTYuMzQzNzUgMjkuMDYyNS0xOS42NTIzNDMgMzUuMzI4MTI1LTM3LjQ3NjU2MiA1Ljk2NDg0NC0xNi45NjA5MzggNS40NzY1NjMtMzYuMTA5Mzc1LTEuMzc4OTA2LTUzLjkyMTg3NS02Ljg1OTM3NS0xNy44MDA3ODItMTkuMzM1OTM4LTMyLjMzMjAzMi0zNS4xMzI4MTItNDAuOTIxODc1LTE2LjU5Mzc1LTkuMDE5NTMxLTM0LjgyNDIxOS0xMC40ODgyODEtNTEuMzEyNS00LjEzMjgxMy0zMy4xNzE4NzYgMTIuNzUzOTA2LTQ4LjM5NDUzMiA1My43NDYwOTQtMzMuOTI5Njg4IDkxLjM5ODQzOCAxMS41NTQ2ODggMjkuOTY4NzUgMzguNTAzOTA2IDQ4Ljg4NjcxOCA2NS43NSA0OC44ODY3MTggNi45NTcwMzEgMCAxMy45MzM1OTQtMS4yMzQzNzQgMjAuNjc1NzgxLTMuODMyMDMxem0wIDAiIGZpbGw9IiMwMDAwMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0xOTkuNjEzMjgxIDE3MS4zODY3MTljNDEuNDY4NzUgMCA3NS4yMDcwMzEtMzguNDM3NSA3NS4yMDcwMzEtODUuNjgzNTk0IDAtNDcuMjU3ODEzLTMzLjczODI4MS04NS43MDMxMjUtNzUuMjA3MDMxLTg1LjcwMzEyNS00MS40NjQ4NDMgMC03NS4xOTkyMTkgMzguNDQ1MzEyLTc1LjE5OTIxOSA4NS43MDMxMjUgMCA0Ny4yNDYwOTQgMzMuNzM0Mzc2IDg1LjY4MzU5NCA3NS4xOTkyMTkgODUuNjgzNTk0em0wIDAiIGZpbGw9IiMwMDAwMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0zMjkuNDk2MDk0IDE5Mi40Mzc1aC4wMDM5MDZjNi4zNzg5MDYgMi4xMTcxODggMTIuODg2NzE5IDMuMTI4OTA2IDE5LjM2NzE4OCAzLjEyODkwNiAzMC4yNDIxODcgMCA1OS43MTQ4NDMtMjIuMDExNzE4IDcwLjk2MDkzNy01NS44Mzk4NDQgNi40NzY1NjMtMTkuNDcyNjU2IDYuMDUwNzgxLTQwLjA2MjUtMS4xOTkyMTktNTcuOTcyNjU2LTcuNTg1OTM3LTE4Ljc1LTIxLjY0NDUzMS0zMi4zNTkzNzUtMzkuNTg5ODQ0LTM4LjMyNDIxOC0xNy45NDkyMTgtNS45NjQ4NDQtMzcuMzU5Mzc0LTMuNDc2NTYzLTU0LjY2MDE1NiA3LTE2LjUyNzM0NCAxMC4wMDc4MTItMjkuMTkxNDA2IDI2LjI0NjA5My0zNS42NjAxNTYgNDUuNzE4NzUtMTMuNjUyMzQ0IDQxLjA3ODEyNCA0LjY0MDYyNSA4NC4yNzM0MzcgNDAuNzc3MzQ0IDk2LjI4OTA2MnptMCAwIiBmaWxsPSIjMDAwMDAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtNDg3Ljg3NSAxODIuNDM3NS0uMDExNzE5LS4wMTE3MTljLTI4LjU5NzY1Ni0yMS4xMjUtNzEuMzY3MTg3LTExLjk2ODc1LTk1LjM0NzY1NiAyMC40MjE4NzUtMjMuOTU3MDMxIDMyLjQwNjI1LTIwLjIxMDkzNyA3NS45NzI2NTYgOC4zNDM3NSA5Ny4xMTMyODIgMTAuNDE0MDYzIDcuNzE0ODQzIDIyLjcxODc1IDExLjQwMjM0MyAzNS4zMTI1IDExLjQwMjM0MyAyMS45NDkyMTkgMCA0NC43ODUxNTYtMTEuMjAzMTI1IDYwLjA1MDc4MS0zMS44MDQ2ODcgMjMuOTUzMTI1LTMyLjQwNjI1IDIwLjIxMDkzOC03NS45NzI2NTYtOC4zNDc2NTYtOTcuMTIxMDk0em0wIDAiIGZpbGw9IiMwMDAwMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD48L2c+PC9zdmc+"
+          />
+          <a href="#">Profile</a>
+        </li>
+        <li class="menu__item">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQyNi42NjcgNDI2LjY2NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDE2LjgsMjY5LjQ0bC00NS4wMTMtMzUuMzA3YzAuODUzLTYuODI3LDEuNDkzLTEzLjc2LDEuNDkzLTIwLjhzLTAuNjQtMTMuOTczLTEuNDkzLTIwLjhsNDUuMTItMzUuMzA3ICAgIGM0LjA1My0zLjIsNS4yMjctOC45NiwyLjU2LTEzLjY1M0wzNzYuOCw2OS42NTNjLTIuNjY3LTQuNTg3LTguMjEzLTYuNTA3LTEzLjAxMy00LjU4N2wtNTMuMTIsMjEuNDQgICAgYy0xMC45ODctOC40MjctMjMuMDQtMTUuNTczLTM2LjA1My0yMS4wMTNsLTgtNTYuNTMzQzI2NS42NTMsMy45NDcsMjYxLjI4LDAsMjU1Ljk0NywwaC04NS4zMzNjLTUuMzMzLDAtOS43MDcsMy45NDctMTAuNTYsOC45NiAgICBsLTgsNTYuNTMzYy0xMy4wMTMsNS40NC0yNS4wNjcsMTIuNDgtMzYuMDUzLDIxLjAxM2wtNTMuMTItMjEuNDRjLTQuOC0xLjgxMy0xMC4zNDcsMC0xMy4wMTMsNC41ODdMNy4yLDE0My41NzMgICAgYy0yLjY2Nyw0LjU4Ny0xLjQ5MywxMC4zNDcsMi41NiwxMy42NTNsNDUuMDEzLDM1LjMwN2MtMC44NTMsNi44MjctMS40OTMsMTMuNzYtMS40OTMsMjAuOHMwLjY0LDEzLjk3MywxLjQ5MywyMC44TDkuNzYsMjY5LjQ0ICAgIGMtNC4wNTMsMy4yLTUuMjI3LDguOTYtMi41NiwxMy42NTNsNDIuNjY3LDczLjkyYzIuNjY3LDQuNTg3LDguMjEzLDYuNTA3LDEzLjAxMyw0LjU4N0wxMTYsMzQwLjE2ICAgIGMxMC45ODcsOC40MjcsMjMuMDQsMTUuNTczLDM2LjA1MywyMS4wMTNsOCw1Ni41MzNjMC44NTMsNS4wMTMsNS4yMjcsOC45NiwxMC41Niw4Ljk2aDg1LjMzM2M1LjMzMywwLDkuNzA3LTMuOTQ3LDEwLjU2LTguOTYgICAgbDgtNTYuNTMzYzEzLjAxMy01LjQ0LDI1LjA2Ny0xMi40OCwzNi4wNTMtMjEuMDEzbDUzLjEyLDIxLjQ0YzQuOCwxLjgxMywxMC4zNDcsMCwxMy4wMTMtNC41ODdsNDIuNjY3LTczLjkyICAgIEM0MjIuMDI3LDI3OC41MDcsNDIwLjg1MywyNzIuNzQ3LDQxNi44LDI2OS40NHogTTIxMy4yOCwyODhjLTQxLjI4LDAtNzQuNjY3LTMzLjM4Ny03NC42NjctNzQuNjY3UzE3MiwxMzguNjY3LDIxMy4yOCwxMzguNjY3ICAgIHM3NC42NjcsMzMuMzg3LDc0LjY2Nyw3NC42NjdTMjU0LjU2LDI4OCwyMTMuMjgsMjg4eiIgZmlsbD0iIzAwMDAwMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4="
+          />
+          <a href="#">Settings</a>
+        </li>
+        <li class="menu__item">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ0Ny42NzQgNDQ3LjY3NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNMTgyLjcyNSwzNzkuMTUxYy0wLjU3Mi0xLjUyMi0wLjc2OS0yLjgxNi0wLjU3NS0zLjg2M2MwLjE5My0xLjA0LTAuNDcyLTEuOTAyLTEuOTk3LTIuNTY2ICAgIGMtMS41MjUtMC42NjQtMi4yODYtMS4xOTEtMi4yODYtMS41NjdjMC0wLjM4LTEuMDkzLTAuNjY3LTMuMjg0LTAuODU1Yy0yLjE5LTAuMTkxLTMuMjgzLTAuMjg4LTMuMjgzLTAuMjg4aC0zLjcxaC0zLjE0SDgyLjIyNCAgICBjLTEyLjU2MiwwLTIzLjMxNy00LjQ2OS0zMi4yNjQtMTMuNDIxYy04Ljk0NS04Ljk0Ni0xMy40MTctMTkuNjk4LTEzLjQxNy0zMi4yNThWMTIzLjMzNWMwLTEyLjU2Miw0LjQ3MS0yMy4zMTMsMTMuNDE3LTMyLjI1OSAgICBjOC45NDctOC45NDcsMTkuNzAyLTEzLjQyMiwzMi4yNjQtMTMuNDIyaDkxLjM2MWMyLjQ3NSwwLDQuNDIxLTAuNjE0LDUuODUyLTEuODU0YzEuNDI1LTEuMjM3LDIuMzc1LTMuMDk0LDIuODUzLTUuNTY4ICAgIGMwLjQ3Ni0yLjQ3NCwwLjc2My00LjcwOCwwLjg1OS02LjcwN2MwLjA5NC0xLjk5NywwLjA0OC00LjUyMS0wLjE0NC03LjU2NmMtMC4xODktMy4wNDQtMC4yODQtNC45NDctMC4yODQtNS43MTIgICAgYzAtMi40NzQtMC45MDUtNC42MTEtMi43MTItNi40MjNjLTEuODA5LTEuODA0LTMuOTQ5LTIuNzA5LTYuNDIzLTIuNzA5SDgyLjIyNGMtMjIuNjQ4LDAtNDIuMDE2LDguMDQyLTU4LjEwMSwyNC4xMjUgICAgQzguMDQyLDgxLjMyMywwLDEwMC42ODgsMCwxMjMuMzM4djIwMC45OTRjMCwyMi42NDgsOC4wNDIsNDIuMDE4LDI0LjEyMyw1OC4wOTVjMTYuMDg1LDE2LjA5MSwzNS40NTMsMjQuMTMzLDU4LjEwMSwyNC4xMzMgICAgaDkxLjM2NWMyLjQ3NSwwLDQuNDIyLTAuNjIyLDUuODUyLTEuODU0YzEuNDI1LTEuMjM5LDIuMzc1LTMuMDk0LDIuODUzLTUuNTcxYzAuNDc2LTIuNDcxLDAuNzYzLTQuNzE2LDAuODU5LTYuNzA3ICAgIGMwLjA5NC0xLjk5OSwwLjA0OC00LjUxOC0wLjE0NC03LjU2M0MxODIuODE4LDM4MS44MTcsMTgyLjcyNSwzNzkuOTE1LDE4Mi43MjUsMzc5LjE1MXoiIGZpbGw9IiMwMDAwMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNDQyLjI0OSwyMTAuOTg5TDI4Ni45MzUsNTUuNjdjLTMuNjE0LTMuNjEyLTcuODk4LTUuNDI0LTEyLjg0Ny01LjQyNGMtNC45NDksMC05LjIzMywxLjgxMi0xMi44NTEsNS40MjQgICAgYy0zLjYxNywzLjYxNy01LjQyNCw3LjkwNC01LjQyNCwxMi44NXY4Mi4yMjZIMTI3LjkwN2MtNC45NTIsMC05LjIzMywxLjgxMi0xMi44NSw1LjQyNGMtMy42MTcsMy42MTctNS40MjQsNy45MDEtNS40MjQsMTIuODUgICAgdjEwOS42MzZjMCw0Ljk0OCwxLjgwNyw5LjIzMiw1LjQyNCwxMi44NDdjMy42MjEsMy42MSw3LjkwMSw1LjQyNywxMi44NSw1LjQyN2gxMjcuOTA3djgyLjIyNWMwLDQuOTQ1LDEuODA3LDkuMjMzLDUuNDI0LDEyLjg0NyAgICBjMy42MTcsMy42MTcsNy45MDEsNS40MjgsMTIuODUxLDUuNDI4YzQuOTQ4LDAsOS4yMzItMS44MTEsMTIuODQ3LTUuNDI4TDQ0Mi4yNDksMjM2LjY5YzMuNjE3LTMuNjIsNS40MjUtNy44OTgsNS40MjUtMTIuODQ4ICAgIEM0NDcuNjc0LDIxOC44OTQsNDQ1Ljg2NiwyMTQuNjA2LDQ0Mi4yNDksMjEwLjk4OXoiIGZpbGw9IiMwMDAwMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+"
+          />
+          <a href="#">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <section class="side-panel">
+        <div class="streamers">
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/1.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>ChuChu</span>
+              </div>
+            </div>
+
+            <div class="streamers__item-views">
+              <span class="pulse"></span>
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/2.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Bulka</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <span class="pulse"></span>
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/3.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Chanel</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <!-- <span class="pulse"></span> -->
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/4.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>CoCo</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <!-- <span class="pulse"></span> -->
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/5.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Murka</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <span class="pulse"></span>
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/6.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Kot</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <!-- <span class="pulse"></span> -->
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/7.png" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Crookshanks</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <!-- <span class="pulse"></span> -->
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/9.png" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Lola</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <!-- <span class="pulse"></span> -->
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/8.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Lilu</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <span class="pulse"></span>
+              <span>5.3K</span>
+            </div>
+          </div>
+          <div class="streamers__item">
+            <div class="streamers__item-info">
+              <div class="streamers__item-avatar">
+                <img class="photo" src="img/10.jpg" alt="" />
+              </div>
+              <div class="streamers__item-name">
+                <span>Kvant</span>
+              </div>
+            </div>
+            <div class="streamers__item-views">
+              <!-- <span class="pulse"></span> -->
+              <span>5.3K</span>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <span class="info__text">Join the Bulka`s community!</span>
+          <div class="info__icons">
+            <a href="#"><i class="fa fa-telegram"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+      </section>
+      <section class="main-panel">
+        <div class="main-panel__categories">
+          <div class="category-panel">
+            <nav class="category-panel__nav">
+              <div class="category__item">All</div>
+              <div class="category__item">Food</div>
+              <div class="category__item">Music</div>
+              <div class="category__item">Humans</div>
+              <div class="category__item">Games</div>
+              <div class="category__item">Computers</div>
+              <div class="category__item">Comedies</div>
+              <div class="category__item">Apartments</div>
+              <div class="category__item">Politics</div>
+              <div class="category__item">Travelling</div>
+              <div class="category__item">Fashion</div>
+              <div class="category__item">Coocking show</div>
+              <div class="category__item">Cosmetics</div>
+              <div class="category__item">Science</div>
+            </nav>
+          </div>
+
+          <div class="video__items">
+            <div class="video__item video__item-live">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/1.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world! Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-live">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/2.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-record">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/3.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-record">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/4.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-live">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/5.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-record">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/6.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item">
+              <div class="video__preview video__item-record">
+                <img class="preview__img" src="img/videos/7.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-record">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/8.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-live">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/9.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-live">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/9.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-record">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/9.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="video__item video__item-record">
+              <div class="video__preview">
+                <img class="preview__img" src="img/videos/9.jpg" alt="" />
+                <div class="live">Live</div>
+                <div class="views">34K viewers</div>
+                <div class="record">42:01</div>
+                <div class="paw">
+                  <i class="fa fa-paw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="video__description">
+                <div class="avatar video__description-avatar">
+                  <img class="photo" src="img/10.jpg" alt="" />
+                </div>
+                <div class="video__text">
+                  <p class="video__name">Hello world!</p>
+                  <p class="video__user-name">Kvant</p>
+                </div>
+
+                <a href="#"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="footer__inner">
+            <span class="footer__text"> Innspired by Kittisaurus </span>
+            <a href="#"><i class="fa fa-youtube-play"></i></a>
+          </div>
+        </footer>
+      </section>
+    </main>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>
